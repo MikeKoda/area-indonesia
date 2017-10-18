@@ -47,6 +47,8 @@ jobs:
       - run:
           name: Building
           command: gradle build
+      - store_artifacts
+          path: build/test-results
       - run:
           name: Jacoco Report
           command: gradle jacocoTestReport
