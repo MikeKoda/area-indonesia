@@ -25,6 +25,6 @@ jobs:
     
     steps:
       - checkout
-      - run: gradle build
+      - run: gradle build --stacktrace
       - store_artifacts:
           path: build/test-results
