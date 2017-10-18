@@ -25,9 +25,9 @@ jobs:
     
     steps:
       - checkout
-      - set -o pipefail && run_cmd | tee ~/cmd_full_output
+      - run: set -o pipefail && run_cmd | tee ~/cmd_full_output
       - run: gradle test --stacktrace
-      - cp ~/cmd_full_output $CIRCLE_ARTIFACTS
+      - run: cp ~/cmd_full_output $CIRCLE_ARTIFACTS
       - run: gradle jacocoTestReport
       - store_artifacts:
           path: build/test-results
