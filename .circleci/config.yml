@@ -25,7 +25,7 @@ jobs:
     
     steps:
       - checkout
-      - run: gradle build --stacktrace
+      - run: gradle test --stacktrace --debug
       - run: gradle jacocoTestReport
       - store_artifacts:
           path: build/test-results
